@@ -5,6 +5,12 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
+val main = sbt.Project(id = appName, base = file("."))
+  .settings(
+    version := appVersion,
+    libraryDependencies ++= appDependencies
+  )
+
 scalaVersion := "2.13.6"
 
 libraryDependencies += guice
